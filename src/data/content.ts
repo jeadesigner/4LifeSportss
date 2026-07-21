@@ -1,4 +1,7 @@
 import { HeroSlide, FAQItem } from '../types';
+import heroCardioImg from '../assets/images/hero_cardio_zone_1784675612172.jpg';
+import heroStrengthImg from '../assets/images/hero_strength_zone_1784675622151.jpg';
+import aboutShowroomImg from '../assets/images/about_showroom_1784675633116.jpg';
 
 export const HERO_SLIDES: HeroSlide[] = [
   {
@@ -6,7 +9,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     title: 'Catálogo 2026 | Equipamentos Profissionais',
     subtitle: 'Esteiras, bikes spinning, escadas e remos desenvolvidos para uso contínuo com alta durabilidade e biomecânica avançada.',
     badge: 'LINHA CARDIO PROFISSIONAL',
-    image: '/src/assets/images/hero_cardio_zone_1784675612172.jpg',
+    image: heroCardioImg,
     ctaText: 'Ver Catálogo Cardio',
     categoryTarget: 'cardio'
   },
@@ -15,7 +18,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     title: 'Monte sua Academia com a 4Life Sports',
     subtitle: 'Soluções completas para academias comerciais, condomínios, hotéis, estúdios e clubes com projetos personalizados.',
     badge: 'PROJETOS DE MUSCULAÇÃO',
-    image: '/src/assets/images/hero_strength_zone_1784675622151.jpg',
+    image: heroStrengthImg,
     ctaText: 'Solicitar Orçamento',
     categoryTarget: 'musculacao'
   },
@@ -24,7 +27,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     title: 'Fale com um Especialista no WhatsApp',
     subtitle: 'Atendimento técnico humanizado e consultoria personalizada para escolha ideal de equipamentos e layout.',
     badge: 'ATENDIMENTO EXCLUSIVO',
-    image: '/src/assets/images/about_showroom_1784675633116.jpg',
+    image: aboutShowroomImg,
     ctaText: 'Conversar no WhatsApp',
     categoryTarget: 'contact'
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageCircle, Award, Users, PackageCheck, Clock } from 'lucide-react';
 import { COMPANY_INFO } from '../data/content';
+import aboutShowroomImg from '../assets/images/about_showroom_1784675633116.jpg';
 
 export const AboutSection: React.FC = () => {
   const handleContactClick = () => {
@@ -16,7 +17,7 @@ export const AboutSection: React.FC = () => {
           <div className="relative group">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-[#111111]">
               <img
-                src="/src/assets/images/about_showroom_1784675633116.jpg"
+                src={aboutShowroomImg}
                 alt="Showroom 4Life Sports"
                 referrerPolicy="no-referrer"
                 className="w-full h-[400px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90"

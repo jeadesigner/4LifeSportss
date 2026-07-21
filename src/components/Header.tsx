@@ -173,6 +173,13 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button 
+              onClick={() => handleNavClick('depoimentos')}
+              className="font-bold text-[#111111] hover:text-[#F5A623] transition-colors text-sm uppercase tracking-wide"
+            >
+              Depoimentos
+            </button>
+
+            <button 
               onClick={onOpenQuoteSimulator}
               className="relative flex items-center gap-1.5 font-bold text-xs bg-amber-50 text-[#111111] px-3 py-1.5 rounded-full border border-[#F5A623] hover:bg-[#F5A623] transition-all"
             >
@@ -277,6 +284,12 @@ export const Header: React.FC<HeaderProps> = ({
                       className="w-full text-left py-2 px-3 font-bold text-[#111111] hover:text-[#F5A623]"
                     >
                       Perguntas Frequentes
+                    </button>
+                    <button 
+                      onClick={() => handleNavClick('depoimentos')}
+                      className="w-full text-left py-2 px-3 font-bold text-[#111111] hover:text-[#F5A623]"
+                    >
+                      Depoimentos de Clientes
                     </button>
                     <button 
                       onClick={() => { setIsMobileMenuOpen(false); onOpenQuoteSimulator(); }}

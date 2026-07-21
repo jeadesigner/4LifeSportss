@@ -6,6 +6,7 @@ import { ProductGridSection } from './components/ProductGridSection';
 import { PromoBanner } from './components/PromoBanner';
 import { AboutSection } from './components/AboutSection';
 import { FAQSection } from './components/FAQSection';
+import { TestimonialsSection } from './components/TestimonialsSection';
 import { Footer } from './components/Footer';
 import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { ProductDetailModal } from './components/ProductDetailModal';
@@ -153,6 +154,9 @@ export default function App() {
 
         {/* FAQ Section ("Perguntas Frequentes") */}
         <FAQSection />
+
+        {/* Testimonials Section ("Depoimentos de Clientes") */}
+        <TestimonialsSection />
       </main>
 
       {/* Footer */}
