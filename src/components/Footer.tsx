@@ -2,6 +2,7 @@ import React from 'react';
 import { Phone, Mail, MapPin, MessageCircle, Instagram, Facebook, ShieldCheck, ArrowUp } from 'lucide-react';
 import { COMPANY_INFO } from '../data/content';
 import { ProductCategory } from '../types';
+import { Logo } from './Logo';
 
 interface FooterProps {
   onSelectCategory: (cat: ProductCategory) => void;
@@ -36,13 +37,8 @@ export const Footer: React.FC<FooterProps> = ({
           
           {/* Column 1: Logo & Short Description */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="bg-[#F5A623] text-[#111111] px-2.5 py-1 rounded font-black text-lg">
-                4L
-              </div>
-              <span className="font-black text-2xl tracking-wider text-white">
-                4LIFE <span className="text-[#F5A623]">SPORTS</span>
-              </span>
+            <div className="flex items-center">
+              <Logo variant="dark" size="md" />
             </div>
 
             <p className="text-xs text-gray-400 leading-relaxed">

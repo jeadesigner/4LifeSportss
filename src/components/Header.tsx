@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Phone, MessageCircle, Search, Menu, X, ChevronDown, Dumbbell, Activity, ShieldAlert, FileText } from 'lucide-react';
 import { ProductCategory } from '../types';
 import { COMPANY_INFO } from '../data/content';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   onSelectCategory: (cat: ProductCategory) => void;
@@ -79,18 +80,8 @@ export const Header: React.FC<HeaderProps> = ({
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group focus:outline-none" onClick={(e) => { e.preventDefault(); handleNavClick('hero'); }}>
-            <div className="bg-[#111111] text-white p-2.5 rounded-lg flex items-center justify-center font-black text-xl tracking-wider group-hover:bg-[#F5A623] group-hover:text-[#111111] transition-colors shadow-sm">
-              <span className="text-[#F5A623] group-hover:text-[#111111]">4</span>LIFE
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-xl tracking-tight text-[#111111] leading-none">
-                4LIFE <span className="text-[#F5A623]">SPORTS</span>
-              </span>
-              <span className="text-[10px] tracking-widest text-gray-500 uppercase font-bold mt-0.5">
-                EQUIPAMENTOS FITNESS
-              </span>
-            </div>
+          <a href="#" className="flex items-center gap-2 group focus:outline-none py-1" onClick={(e) => { e.preventDefault(); handleNavClick('hero'); }}>
+            <Logo variant="light" size="md" />
           </a>
 
           {/* Desktop Navigation */}
