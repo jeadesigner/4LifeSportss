@@ -26,11 +26,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto font-sans" onClick={onClose}>
       <div 
-        className="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl border border-gray-200 relative animate-in fade-in zoom-in-95 duration-200 my-4 sm:my-8"
+        className="bg-white rounded-2xl max-w-2xl w-full max-h-[92vh] sm:max-h-[90vh] flex flex-col shadow-2xl border border-gray-200 relative animate-in fade-in zoom-in-95 duration-200 my-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Top Header Bar with 'Voltar ao Catálogo' and 'Close' */}
-        <div className="bg-[#111111] text-white px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-gray-800">
+        {/* Top Header Bar with 'Voltar ao Catálogo' and 'Close' (Always Visible / Non-clipping) */}
+        <div className="bg-[#111111] text-white px-4 sm:px-6 py-3.5 flex items-center justify-between border-b border-gray-800 shrink-0 rounded-t-2xl">
           <button
             onClick={onClose}
             className="inline-flex items-center gap-2 text-xs font-bold text-gray-300 hover:text-[#F5A623] hover:bg-gray-800 px-3 py-1.5 rounded-lg transition-colors"
@@ -48,8 +48,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           </button>
         </div>
 
-        {/* Text-Only Content Body */}
-        <div className="p-5 sm:p-8 space-y-6">
+        {/* Text-Only Scrollable Content Body */}
+        <div className="p-5 sm:p-8 space-y-6 overflow-y-auto flex-1">
           <div>
             {/* Category & Badge Tags */}
             <div className="flex flex-wrap items-center gap-2 mb-2">
