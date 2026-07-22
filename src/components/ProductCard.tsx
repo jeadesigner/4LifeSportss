@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Product } from '../types';
 import { COMPANY_INFO } from '../data/content';
 import { MessageCircle, Eye, Plus, Check } from 'lucide-react';
@@ -28,7 +29,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   return (
-    <div 
+    <motion.div 
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-30px' }}
+      transition={{ duration: 0.45, ease: [0.215, 0.61, 0.355, 1] }}
       onClick={() => onOpenDetail(product)}
       className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer relative w-full"
     >
@@ -113,6 +118,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

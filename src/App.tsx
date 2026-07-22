@@ -12,8 +12,9 @@ import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { QuoteSimulatorModal } from './components/QuoteSimulatorModal';
 import { SearchModal } from './components/SearchModal';
+import { ScrollReveal } from './components/ScrollReveal';
 import { Product, ProductCategory, QuoteItem } from './types';
-import { Check, Sparkles } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState<ProductCategory | 'todos'>('todos');
@@ -114,49 +115,63 @@ export default function App() {
         />
 
         {/* Category Shortcuts */}
-        <CategoryShortcuts
-          onSelectCategory={handleSelectCategory}
-          onNavigateSection={scrollToSection}
-          activeCategory={activeCategory}
-        />
+        <ScrollReveal delay={0.1}>
+          <CategoryShortcuts
+            onSelectCategory={handleSelectCategory}
+            onNavigateSection={scrollToSection}
+            activeCategory={activeCategory}
+          />
+        </ScrollReveal>
 
         {/* Featured Products Section: "Catálogo 2026 — Mais Procurados" */}
-        <ProductGridSection
-          title="Catálogo 2026 — Mais Procurados"
-          subtitle="Os equipamentos fitness profissionais mais vendidos para academias e condomínios de alto padrão."
-          sectionId="destaques"
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-          onOpenDetail={setSelectedDetailProduct}
-          onAddToQuote={handleAddToQuote}
-          quoteProductIds={quoteProductIds}
-          featuredOnly={true}
-        />
+        <ScrollReveal delay={0.1}>
+          <ProductGridSection
+            title="Catálogo 2026 — Mais Procurados"
+            subtitle="Os equipamentos fitness profissionais mais vendidos para academias e condomínios de alto padrão."
+            sectionId="destaques"
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+            onOpenDetail={setSelectedDetailProduct}
+            onAddToQuote={handleAddToQuote}
+            quoteProductIds={quoteProductIds}
+            featuredOnly={true}
+          />
+        </ScrollReveal>
 
         {/* Promotional Banner between sections */}
-        <PromoBanner />
+        <ScrollReveal delay={0.1}>
+          <PromoBanner />
+        </ScrollReveal>
 
         {/* About Section ("Quem Somos") */}
-        <AboutSection />
+        <ScrollReveal delay={0.1}>
+          <AboutSection />
+        </ScrollReveal>
 
         {/* Full Catalog Section */}
-        <ProductGridSection
-          title="Catálogo Completo 4Life Sports"
-          subtitle="Explore nossa linha integral de Cardio, Musculação e Acessórios com especificações técnicas completas."
-          sectionId="catalogo"
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-          onOpenDetail={setSelectedDetailProduct}
-          onAddToQuote={handleAddToQuote}
-          quoteProductIds={quoteProductIds}
-          featuredOnly={false}
-        />
+        <ScrollReveal delay={0.1}>
+          <ProductGridSection
+            title="Catálogo Completo 4Life Sports"
+            subtitle="Explore nossa linha integral de Cardio, Musculação e Acessórios com especificações técnicas completas."
+            sectionId="catalogo"
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+            onOpenDetail={setSelectedDetailProduct}
+            onAddToQuote={handleAddToQuote}
+            quoteProductIds={quoteProductIds}
+            featuredOnly={false}
+          />
+        </ScrollReveal>
 
         {/* FAQ Section ("Perguntas Frequentes") */}
-        <FAQSection />
+        <ScrollReveal delay={0.1}>
+          <FAQSection />
+        </ScrollReveal>
 
         {/* Testimonials Section ("Depoimentos de Clientes") */}
-        <TestimonialsSection />
+        <ScrollReveal delay={0.1}>
+          <TestimonialsSection />
+        </ScrollReveal>
       </main>
 
       {/* Footer */}
