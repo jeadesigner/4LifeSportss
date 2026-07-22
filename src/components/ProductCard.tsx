@@ -52,6 +52,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           src={product.image}
           alt={product.name}
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            console.error(`[Image Error] Failed to load image for product "${product.name}":`, product.image);
+            (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800';
+          }}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 rounded-lg"
         />
       </div>

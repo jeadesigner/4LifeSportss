@@ -64,6 +64,10 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onSelectCategory, on
                 src={slide.image}
                 alt={slide.title}
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  console.error(`[Image Error] Failed to load hero carousel slide "${slide.title}":`, slide.image);
+                  (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200';
+                }}
                 className="w-full h-full object-cover object-center opacity-45 scale-105 transition-transform duration-10000 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent w-full lg:w-2/3" />

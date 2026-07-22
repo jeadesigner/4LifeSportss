@@ -49,6 +49,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 src={product.image}
                 alt={product.name}
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  console.error(`[Image Error] Failed to load image in detail modal for "${product.name}":`, product.image);
+                  (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800';
+                }}
                 className="w-full h-64 object-cover object-center rounded-xl shadow-md"
               />
             </div>
