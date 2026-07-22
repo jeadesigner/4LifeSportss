@@ -55,21 +55,21 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="w-full z-50 font-sans">
       {/* Top Bar */}
-      <div className="bg-[#111111] text-gray-300 text-xs py-2 px-4 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-2 text-center sm:text-left">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#F5A623] animate-pulse"></span>
+      <div className="bg-[#111111] text-gray-300 text-[11px] sm:text-xs py-2 px-3 sm:px-4 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-2 text-center sm:text-left flex-wrap justify-center sm:justify-start">
+            <span className="inline-block w-2 h-2 rounded-full bg-[#F5A623] animate-pulse shrink-0"></span>
             <span className="font-medium text-white">Equipamentos Fitness Profissionais</span>
             <span className="hidden md:inline text-gray-500">|</span>
             <span className="hidden md:inline text-gray-300">Atendimento via WhatsApp</span>
           </div>
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex items-center gap-3 sm:gap-4 text-[11px] sm:text-xs">
             <a href={`tel:${COMPANY_INFO.whatsappNumber}`} className="hover:text-[#F5A623] transition-colors flex items-center gap-1">
-              <Phone className="w-3 h-3 text-[#F5A623]" />
+              <Phone className="w-3 h-3 text-[#F5A623] shrink-0" />
               <span>{COMPANY_INFO.phoneDisplay}</span>
             </a>
             <span className="text-gray-600">|</span>
-            <span className="text-[#F5A623] font-semibold">Envio para todo o Brasil</span>
+            <span className="text-[#F5A623] font-semibold truncate max-w-[150px] sm:max-w-none">Envio para todo o Brasil</span>
           </div>
         </div>
       </div>
@@ -215,80 +215,79 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile Slide Drawer Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)}>
+          <div className="lg:hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)}>
             <div 
-              className="fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto animate-in slide-in-from-right duration-300"
+              className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl p-5 sm:p-6 flex flex-col justify-between overflow-y-auto animate-in slide-in-from-right duration-300"
               onClick={(e) => e.stopPropagation()}
             >
               <div>
-                <div className="flex justify-between items-center pb-4 border-b border-gray-100 mb-6">
-                  <div className="flex items-center gap-2">
-                    <div className="bg-[#111111] text-[#F5A623] p-1.5 rounded font-black text-sm">
-                      4L
-                    </div>
-                    <span className="font-extrabold text-lg text-[#111111]">4Life Sports</span>
-                  </div>
-                  <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-gray-500 hover:text-black">
+                <div className="flex justify-between items-center pb-4 border-b border-gray-100 mb-5">
+                  <Logo variant="light" size="sm" />
+                  <button 
+                    onClick={() => setIsMobileMenuOpen(false)} 
+                    className="p-2 text-gray-500 hover:text-black hover:bg-gray-100 rounded-full transition-colors"
+                    aria-label="Fechar menu"
+                  >
                     <X className="w-6 h-6" />
                   </button>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Categorias de Produtos</h3>
+                    <h3 className="text-[11px] font-extrabold text-gray-400 uppercase tracking-wider mb-2">Categorias de Produtos</h3>
                     <div className="space-y-1">
                       <button 
                         onClick={() => handleCategoryClick('cardio')}
-                        className="w-full text-left py-2.5 px-3 rounded-lg hover:bg-gray-100 font-bold text-[#111111] flex items-center justify-between"
+                        className="w-full text-left py-3 px-3.5 rounded-xl hover:bg-gray-100 font-bold text-[#111111] flex items-center justify-between text-sm active:bg-gray-200 transition-colors"
                       >
-                        <span>🚴 Cardio</span>
-                        <span className="text-xs text-gray-400">Esteiras, Bikes...</span>
+                        <span className="flex items-center gap-2">🚴 <span>Cardio</span></span>
+                        <span className="text-xs text-gray-400 font-normal">Esteiras, Bikes...</span>
                       </button>
                       <button 
                         onClick={() => handleCategoryClick('musculacao')}
-                        className="w-full text-left py-2.5 px-3 rounded-lg hover:bg-gray-100 font-bold text-[#111111] flex items-center justify-between"
+                        className="w-full text-left py-3 px-3.5 rounded-xl hover:bg-gray-100 font-bold text-[#111111] flex items-center justify-between text-sm active:bg-gray-200 transition-colors"
                       >
-                        <span>🏋️ Musculação</span>
-                        <span className="text-xs text-gray-400">Máquinas, Supinos...</span>
+                        <span className="flex items-center gap-2">🏋️ <span>Musculação</span></span>
+                        <span className="text-xs text-gray-400 font-normal">Máquinas, Supinos...</span>
                       </button>
                       <button 
                         onClick={() => handleCategoryClick('acessorios')}
-                        className="w-full text-left py-2.5 px-3 rounded-lg hover:bg-gray-100 font-bold text-[#111111] flex items-center justify-between"
+                        className="w-full text-left py-3 px-3.5 rounded-xl hover:bg-gray-100 font-bold text-[#111111] flex items-center justify-between text-sm active:bg-gray-200 transition-colors"
                       >
-                        <span>🎽 Acessórios</span>
-                        <span className="text-xs text-gray-400">Halteres, Anilhas...</span>
+                        <span className="flex items-center gap-2">🎽 <span>Acessórios</span></span>
+                        <span className="text-xs text-gray-400 font-normal">Halteres, Anilhas...</span>
                       </button>
                     </div>
                   </div>
 
                   <hr className="border-gray-100" />
 
-                  <div className="space-y-2">
+                  <div className="space-y-1">
                     <button 
                       onClick={() => handleNavClick('quem-somos')}
-                      className="w-full text-left py-2 px-3 font-bold text-[#111111] hover:text-[#F5A623]"
+                      className="w-full text-left py-3 px-3.5 rounded-xl font-bold text-sm text-[#111111] hover:bg-gray-100 active:bg-gray-200 transition-colors"
                     >
                       Quem Somos
                     </button>
                     <button 
                       onClick={() => handleNavClick('faq')}
-                      className="w-full text-left py-2 px-3 font-bold text-[#111111] hover:text-[#F5A623]"
+                      className="w-full text-left py-3 px-3.5 rounded-xl font-bold text-sm text-[#111111] hover:bg-gray-100 active:bg-gray-200 transition-colors"
                     >
                       Perguntas Frequentes
                     </button>
                     <button 
                       onClick={() => handleNavClick('depoimentos')}
-                      className="w-full text-left py-2 px-3 font-bold text-[#111111] hover:text-[#F5A623]"
+                      className="w-full text-left py-3 px-3.5 rounded-xl font-bold text-sm text-[#111111] hover:bg-gray-100 active:bg-gray-200 transition-colors"
                     >
                       Depoimentos de Clientes
                     </button>
                     <button 
                       onClick={() => { setIsMobileMenuOpen(false); onOpenQuoteSimulator(); }}
-                      className="w-full text-left py-2 px-3 font-bold text-[#111111] hover:text-[#F5A623] flex items-center justify-between"
+                      className="w-full text-left py-3 px-3.5 rounded-xl font-bold text-sm text-[#111111] bg-amber-50 hover:bg-amber-100 border border-[#F5A623] flex items-center justify-between mt-2 active:bg-amber-200 transition-colors"
                     >
                       <span>Simulador de Orçamento</span>
                       {quoteCount > 0 && (
-                        <span className="bg-[#111111] text-[#F5A623] text-xs font-bold px-2 py-0.5 rounded-full">
+                        <span className="bg-[#111111] text-[#F5A623] text-xs font-black px-2.5 py-0.5 rounded-full">
                           {quoteCount}
                         </span>
                       )}
@@ -297,15 +296,15 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-gray-100 space-y-3">
+              <div className="pt-6 border-t border-gray-100 space-y-3 mt-6">
                 <button 
                   onClick={() => { setIsMobileMenuOpen(false); openWhatsApp(); }}
-                  className="w-full bg-[#25D366] text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2"
+                  className="w-full bg-[#25D366] text-white py-3.5 rounded-xl font-extrabold text-sm flex items-center justify-center gap-2 shadow-md active:scale-98 transition-all"
                 >
                   <MessageCircle className="w-5 h-5 fill-current" />
                   <span>Falar no WhatsApp</span>
                 </button>
-                <p className="text-center text-xs text-gray-400">Atendimento de Segunda a Sábado</p>
+                <p className="text-center text-[11px] font-medium text-gray-400">Atendimento Técnico de Segunda a Sábado</p>
               </div>
             </div>
           </div>

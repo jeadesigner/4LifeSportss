@@ -29,18 +29,18 @@ export const AboutSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
               {/* Floating Badge Card */}
-              <div className="absolute bottom-6 left-6 right-6 p-6 bg-[#111111]/90 backdrop-blur-md rounded-xl border border-[#F5A623]/30 text-white">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 p-4 sm:p-6 bg-[#111111]/90 backdrop-blur-md rounded-xl border border-[#F5A623]/30 text-white">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-[#F5A623] text-[#111111] rounded-lg font-black text-sm">
+                  <div className="p-1.5 sm:p-2 bg-[#F5A623] text-[#111111] rounded-lg font-black text-xs sm:text-sm shrink-0">
                     4LIFE
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-sm text-white">Showroom & Centro Técnico</h4>
-                    <p className="text-xs text-gray-300">São Paulo — Atendimento Nacional</p>
+                    <h4 className="font-extrabold text-xs sm:text-sm text-white">Showroom & Centro Técnico</h4>
+                    <p className="text-[10px] sm:text-xs text-gray-300">São Paulo — Atendimento Nacional</p>
                   </div>
                 </div>
-                <p className="text-xs text-gray-300 leading-relaxed">
-                  Equipamentos testados e aprovados pelos maiores especialistas em biomecânica e educação física do país.
+                <p className="text-[11px] sm:text-xs text-gray-300 leading-relaxed line-clamp-2 sm:line-clamp-none">
+                  Equipamentos testados e aprovados pelos maiores especialistas em biomecânica do país.
                 </p>
               </div>
             </div>
@@ -69,29 +69,29 @@ export const AboutSection: React.FC = () => {
             </p>
 
             {/* 3 Impact Numbers - Highlight Boxes */}
-            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-b border-gray-100 py-6">
-              <div className="bg-[#F5F5F5] p-4 rounded-xl border border-gray-200 text-center">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-b border-gray-100 py-4 sm:py-6">
+              <div className="bg-[#F5F5F5] p-2.5 sm:p-4 rounded-xl border border-gray-200 text-center">
                 <div className="flex justify-center mb-1 text-[#111111]">
-                  <Users className="w-5 h-5 text-[#F5A623]" />
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5 text-[#F5A623]" />
                 </div>
-                <span className="block font-black text-2xl sm:text-3xl text-[#111111]">+500</span>
-                <span className="text-[11px] font-bold text-gray-500 uppercase">Clientes Atendidos</span>
+                <span className="block font-black text-lg sm:text-3xl text-[#111111]">+500</span>
+                <span className="text-[9px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-tight">Clientes</span>
               </div>
 
-              <div className="bg-[#F5F5F5] p-4 rounded-xl border border-gray-200 text-center">
+              <div className="bg-[#F5F5F5] p-2.5 sm:p-4 rounded-xl border border-gray-200 text-center">
                 <div className="flex justify-center mb-1 text-[#111111]">
-                  <PackageCheck className="w-5 h-5 text-[#F5A623]" />
+                  <PackageCheck className="w-4 h-4 sm:w-5 sm:h-5 text-[#F5A623]" />
                 </div>
-                <span className="block font-black text-2xl sm:text-3xl text-[#111111]">+20</span>
-                <span className="text-[11px] font-bold text-gray-500 uppercase">Produtos no Catálogo</span>
+                <span className="block font-black text-lg sm:text-3xl text-[#111111]">+20</span>
+                <span className="text-[9px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-tight">Produtos</span>
               </div>
 
-              <div className="bg-[#F5F5F5] p-4 rounded-xl border border-gray-200 text-center">
+              <div className="bg-[#F5F5F5] p-2.5 sm:p-4 rounded-xl border border-gray-200 text-center">
                 <div className="flex justify-center mb-1 text-[#111111]">
-                  <Clock className="w-5 h-5 text-[#F5A623]" />
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#F5A623]" />
                 </div>
-                <span className="block font-black text-2xl sm:text-3xl text-[#111111]">+5 Anos</span>
-                <span className="text-[11px] font-bold text-gray-500 uppercase">De Mercado</span>
+                <span className="block font-black text-lg sm:text-3xl text-[#111111]">+5 Anos</span>
+                <span className="text-[9px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-tight">Mercado</span>
               </div>
             </div>
 

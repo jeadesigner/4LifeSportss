@@ -11,7 +11,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 font-sans">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-2 font-sans">
       {/* Tooltip Card */}
       {showTooltip && (
         <div className="relative bg-[#111111] text-white text-xs font-bold px-3.5 py-2.5 rounded-xl shadow-2xl border border-[#F5A623] flex items-center gap-2 animate-bounce">

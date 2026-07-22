@@ -55,23 +55,23 @@ export const QuoteSimulatorModal: React.FC<QuoteSimulatorModalProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-[#111111] text-white p-6 flex items-center justify-between border-b border-[#F5A623]">
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 bg-[#F5A623] text-[#111111] rounded-xl font-black">
-              <FileText className="w-6 h-6" />
+        <div className="bg-[#111111] text-white p-4 sm:p-6 flex items-center justify-between border-b border-[#F5A623]">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="p-2 sm:p-2.5 bg-[#F5A623] text-[#111111] rounded-xl font-black shrink-0">
+              <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h3 className="font-extrabold text-lg tracking-tight text-white">
-                Lista de Orçamento Personalizado
+              <h3 className="font-extrabold text-base sm:text-lg tracking-tight text-white leading-snug">
+                Lista de Orçamento
               </h3>
-              <p className="text-xs text-gray-400">
+              <p className="text-[11px] sm:text-xs text-gray-400">
                 Monte a cotação de equipamentos para seu espaço fitness
               </p>
             </div>
           </div>
 
-          <button onClick={onClose} className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-800">
-            <X className="w-6 h-6" />
+          <button onClick={onClose} className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-800 transition-colors shrink-0">
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
 

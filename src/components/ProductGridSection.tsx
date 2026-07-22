@@ -139,9 +139,9 @@ export const ProductGridSection: React.FC<ProductGridSectionProps> = ({
           </button>
         </div>
 
-        {/* Product Grid: 4 columns desktop / 2 mobile */}
+        {/* Product Grid: 1 column mobile (100% width) / 2 cols sm / 3 cols md / 4 cols lg */}
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
             {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}

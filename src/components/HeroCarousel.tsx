@@ -44,7 +44,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onSelectCategory, on
 
   return (
     <section 
-      className="relative w-full h-[500px] sm:h-[580px] lg:h-[640px] bg-[#111111] overflow-hidden group select-none"
+      className="relative w-full h-[380px] sm:h-[500px] lg:h-[700px] min-h-[320px] bg-black overflow-hidden group select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -58,8 +58,8 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onSelectCategory, on
               isActive ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
-            {/* Background Image with Gradient Overlay */}
-            <div className="absolute inset-0 bg-black">
+            {/* Background Image Container - 100% full view with object-contain */}
+            <div className="absolute inset-0 bg-black flex items-center justify-center">
               <img
                 src={slide.image}
                 alt={slide.title}
@@ -68,46 +68,47 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onSelectCategory, on
                   console.error(`[Image Error] Failed to load hero carousel slide "${slide.title}":`, slide.image);
                   (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200';
                 }}
-                className="w-full h-full object-cover object-center opacity-45 scale-105 transition-transform duration-10000 ease-out"
+                className="w-full h-full object-contain object-center opacity-85 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent w-full lg:w-2/3" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
+              {/* Subtle dark gradient overlay for optimal typography legibility */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30 w-full lg:w-3/4" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
             </div>
 
             {/* Slide Content */}
-            <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start text-left text-white z-20">
-              <div className="max-w-2xl space-y-4 sm:space-y-6">
+            <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-start text-left text-white z-20 py-8">
+              <div className="max-w-2xl space-y-3 sm:space-y-6 w-full">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 bg-[#111111]/90 border border-[#F5A623] px-3.5 py-1.5 rounded-md">
+                <div className="inline-flex items-center gap-2 bg-[#111111]/90 border border-[#F5A623] px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-md">
                   <span className="w-2 h-2 rounded-full bg-[#F5A623] animate-ping" />
-                  <span className="text-[#F5A623] text-xs font-black tracking-widest uppercase">
+                  <span className="text-[#F5A623] text-[10px] sm:text-xs font-black tracking-widest uppercase">
                     {slide.badge}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
                   {slide.title.split('|')[0]}
                   {slide.title.includes('|') && (
-                    <span className="block text-[#F5A623] mt-1 font-extrabold text-2xl sm:text-4xl lg:text-5xl">
+                    <span className="block text-[#F5A623] mt-1 font-extrabold text-xl sm:text-3xl lg:text-4xl">
                       | {slide.title.split('|')[1]}
                     </span>
                   )}
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-gray-300 text-sm sm:text-lg leading-relaxed font-normal max-w-xl">
+                <p className="text-gray-300 text-xs sm:text-base leading-relaxed font-normal max-w-xl line-clamp-3 sm:line-clamp-none">
                   {slide.subtitle}
                 </p>
 
-                {/* CTA Buttons */}
-                <div className="pt-2 flex flex-wrap items-center gap-4">
+                {/* CTA Buttons - Stacked on Mobile, Row on Desktop */}
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                   <button
                     onClick={() => handleCtaClick(slide)}
-                    className="bg-[#111111] border-2 border-[#F5A623] text-white hover:bg-[#F5A623] hover:text-[#111111] font-extrabold px-7 py-3.5 rounded-lg text-sm uppercase tracking-wider transition-all duration-300 flex items-center gap-2 shadow-xl hover:shadow-[#F5A623]/20"
+                    className="w-full sm:w-auto bg-[#111111] border-2 border-[#F5A623] text-white hover:bg-[#F5A623] hover:text-[#111111] font-extrabold px-6 py-3.5 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 shadow-xl active:scale-98"
                   >
                     <span>{slide.ctaText}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 shrink-0" />
                   </button>
 
                   <button
@@ -115,9 +116,9 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onSelectCategory, on
                       const msg = encodeURIComponent(`Olá, 4Life Sports! Gostaria de consultar informações sobre: ${slide.title}`);
                       window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${msg}`, '_blank');
                     }}
-                    className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-6 py-3.5 rounded-lg text-sm flex items-center gap-2 transition-all shadow-md"
+                    className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-6 py-3.5 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-md active:scale-98"
                   >
-                    <MessageCircle className="w-4 h-4 fill-current" />
+                    <MessageCircle className="w-4 h-4 fill-current shrink-0" />
                     <span>Falar no WhatsApp</span>
                   </button>
                 </div>
